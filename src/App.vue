@@ -1,9 +1,7 @@
-<script setup lang="ts">
-import CounterButton from './components/CounterButton.vue'
-</script>
-
 <template>
-  <CounterButton />
+  <FruitCycler />
 </template>
 
-<style scoped></style>
+<script setup lang="ts">
+import FruitCycler from './components/FruitCycler.vue'
+</script>
