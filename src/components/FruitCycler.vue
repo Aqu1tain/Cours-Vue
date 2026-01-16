@@ -1,6 +1,11 @@
 <template>
   <img :src="currentFruit.image" :alt="currentFruit.name" />
-  <FruitButton :name="currentFruit.name" @click="next" />
+  <FruitButton
+    :name="currentFruit.name"
+    :current="currentIndex + 1"
+    :total="fruits.length"
+    @click="next"
+  />
 </template>
 
 <script setup lang="ts">
@@ -20,7 +25,8 @@ const fruits: Fruit[] = [
 ]
 const index = ref(0)
 
-const currentFruit = computed((): Fruit => fruits[index.value % fruits.length]!)
+const currentIndex = computed(() => index.value % fruits.length)
+const currentFruit = computed((): Fruit => fruits[currentIndex.value]!)
 
 const next = () => { index.value++ }
 </script>
