@@ -1,5 +1,5 @@
 <template>
-    <button @click="emit('click')">{{ name }}</button>
+    <button @click="emit('next')">{{ name }}</button>
     <p>{{ current }} / {{ total }}</p>
 </template>
 
@@ -11,6 +11,6 @@ defineProps<{
 }>()
 
 const emit = defineEmits<{
-  click: []
+  next: []
 }>()
 </script>
