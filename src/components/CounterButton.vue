@@ -1,10 +1,12 @@
 <template>
-  <button @click="index = (index + 1) % fruits.length">{{ fruits[index] }}</button>
+  <button @click="index++">{{ currentFruit }}</button>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const fruits = ['banana', 'orange', 'apple', 'dragon fruit']
 const index = ref(0)
+
+const currentFruit = computed(() => fruits[index.value % fruits.length])
 </script>
